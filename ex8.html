@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+    
+    div.section{
+      background-color: lightblue;
+
+    }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <button type="button" id="btn">버튼</button>
+      <button type="button" id="btn">중지</button>
+      
+      
+      <div class = "section">
+      <img src="/images/apple.jpg">
+      <img src="/images/banana.jpg" >
+      <img src="/images/cherry.jpg" >
+       <img src="/images/kiwi.jpg" >
+        <img src="/images/mango.jpg" >
+
+
+    </div>
+
+    <script src="jquery-3.6.0.js"></script>
+      var taskId;
+      var taskId2;
+    <script>
+      $("#btn").on("click", function () {
+     
+        //2초 주기로 동작수행
+
+        setTimeout(function(){
+          console.log('2초 후 출력됨...')
+
+        },2000);
+
+        //2초 주기로 동작수행
+        setInterval(function(){
+          $('img').first().appendTo('div.section');
+        },2000);
+
+      });
+
+      $('#btnStop').on('click',function(){
+        //clearTimeout(taskId2);
+        clearInterval(taskId);
+      });
+    </script>
+  </body>
+</html>

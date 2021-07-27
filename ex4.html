@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <button type="button" id="btn">버튼</button>
+      <ul>
+        <li>aaa</li>
+        <li>bbb</li>
+        <li>ccc</li>
+      </ul>
+    </div>
+
+    <script src="jquery-3.6.0.js"></script>
+
+    <script>
+          $("#btn").on('click',function(){//on은 모든이벤트
+
+          //서버로부터 받아온 array 데이터라고 가정함
+
+          var arr = [
+          {name :  'naver',link : 'http://www.naver.com'},
+          {name :  'daum',link : 'http://www.daum.net'},
+          {name :  'nate',link : 'http://www.nate.com'}
+          {name :  'jquery',link : 'http://www.jquery.com'}
+
+          ];//행이 여러개인것을 받을때{내용(객체)}  [배열리스트]
+
+
+
+        //배열(array)을 대상으로 반복문을 돌때는 for of 로 인덱스 없이 접근 가능
+       var str = '';
+
+        for(var obj of arr){
+
+          //백틱 (`)문자열 : html문서처럼 사용 가능
+          //${obj.link}자바 스크립트 불러 낼때 달러 중괄호
+          str += `
+          <li>
+            <a href = "${obj.link}"> ${obj.name}</a>
+          </li>
+
+            `;
+
+      }//for
+
+      console.log(str);
+
+      $('ul').html(str);
+
+
+
+
+
+
+          });
+    </script>
+  </body>
+</html>

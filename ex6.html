@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <button type="button" id="btn">버튼</button>
+      <br />
+      <input type="checkbox" id="chk" checked />체크박스
+      <br />
+      <img src="/images/apple.jpg" width="200" height="200" />
+      <img src="/images/banana.jpg" />
+      <img src="/images/cherry.jpg" />
+    </div>
+
+    <script src="jquery-3.6.0.js"></script>
+
+    <script>
+      $("#btn").on("click", function () {
+        //attr(문서기준),prop(전체 url주소를 가져온다.)함수 :문서객체의   속성을 제어하는 용도
+
+        //$('img:first').attr('src','images/kiwi.jpg')//setter
+        //$('img:first').prop('src','images/kiwi.jpg')//setter
+
+        // var str = $("img:first").attr("src"); //getter
+        var str = $("img:first").prop("src"); //getter
+
+        console.log();
+
+        str = $(#chk).attr('checked');//getter
+        console.log('attr():'+str);
+
+        str = $(#chk).prop('checked');//getter
+        console.log('prop():'+str);
+
+        $('#chk').prop('checked',true);//setter
+
+
+
+        //이미지에 가로크기를 200px로 설정
+        //$('img').prop('width',function(index){
+
+          //return (index + 1) * 100;
+
+
+
+
+        //});
+
+        //$('img').prop('width',200).prop('height',250);
+
+        var obj = {
+
+        };
+
+        $('img').prop({
+
+        width :  function(){},
+        height : 250
+        });
+
+
+
+
+      });
+    </script>
+  </body>
+</html>

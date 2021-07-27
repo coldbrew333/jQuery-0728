@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        color: orange;
+        background-color: lightpink;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <button type="button" id="btn">버튼</button>
+      <h1>제목1</h1>
+      <h1 id="aa">제목2</h1>
+      <h1 class="bb">제목3</h1>
+      <p>본문내용</p>
+    </div>
+
+    <script src="jquery-3.6.0.js"></script>
+
+    <script>
+      //선택자.메소드().메소드().메소드();
+      //선택자 - > 전체* 태그명 아이디 클래스 속성 등
+
+      $("#btn").on("click", function () {
+        //전체 선택자
+        //$("*").css("color", "orange")
+        //.css('background-color','lightblue');
+
+        $("*").css({
+          color: "orange",
+          backgroundColor: "lightblue",
+        });
+
+        $("h1").css("color", "blue");
+
+        $("#aa").css("color", "red");
+
+        $(".bb").css("color", "green");
+      });
+    </script>
+  </body>
+</html>

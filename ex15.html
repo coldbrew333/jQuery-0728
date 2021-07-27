@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      img {
+        position: reletive;
+        left: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <img src="images/apple.jpg" /><br />
+      <img src="images/banana.jpg" /><br />
+    </div>
+
+    <script src="jquery-3.6.0.js"></script>
+
+    <script>
+      $("img").click(function () {
+        //css스타일 속성을 지정해주면 애니메이션으로 적용해준다.
+
+        var left = $(this).css("left");
+        console.log(leftOffset);
+        console.log(typeof leftOffset);
+
+        leftOffset = parseInt(leftOffset) + 200; //'0'px - > 0
+
+        $(this).animate(
+          {
+            left: leftOffset,
+            opacity: "0.5",
+          },
+          1000
+        );
+      });
+    </script>
+  </body>
+</html>
